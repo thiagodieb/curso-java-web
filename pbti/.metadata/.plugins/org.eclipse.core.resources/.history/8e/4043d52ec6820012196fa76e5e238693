@@ -1,0 +1,9 @@
+package dao;
+
+import beans.Curso;
+
+public class CursoDao extends GenericDao<Curso>{
+
+	
+	
+}

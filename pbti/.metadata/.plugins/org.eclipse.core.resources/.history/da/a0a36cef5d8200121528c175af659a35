@@ -1,0 +1,13 @@
+package action;
+
+public class Index {
+	
+	public String execute(){
+		return "success";
+	}
+
+	public String list(){
+		return "result-list";
+	}
+
+}

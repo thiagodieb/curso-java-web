@@ -1,0 +1,9 @@
+package dao;
+
+public class PessoaDao {
+	
+	public Pessoa add(Pessoa p){
+		return null;
+	}
+
+}

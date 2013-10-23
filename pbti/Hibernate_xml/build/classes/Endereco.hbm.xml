@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping 
+ PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping package="beans">
+	<class name="Endereco" table="endereco">
+		<id name="id" column="id">
+	        <generator class="foreign">
+	            <param name="property">aluno</param>
+	        </generator>
+    		</id>
+		<property name="logadouro" />
+		<property name="bairro" />
+		<property name="cidade" />
+		<property name="estado" />
+		
+		  <one-to-one name="aluno" constrained="true"/>
+        	  
+	    </class>
+</hibernate-mapping> 

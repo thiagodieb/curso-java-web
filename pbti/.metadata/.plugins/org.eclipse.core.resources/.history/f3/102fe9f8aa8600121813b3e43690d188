@@ -1,0 +1,9 @@
+package actions;
+
+public class LoginAction {
+	
+	public String execute(){
+		return "success";
+	}
+
+}

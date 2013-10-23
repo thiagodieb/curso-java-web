@@ -1,0 +1,11 @@
+package beans;
+
+import javax.persistence.*;
+
+@Entity
+public class Curso {
+	@Id
+	@GeneratedValue
+	private int id;
+
+}

@@ -1,0 +1,30 @@
+package action;
+ 
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.struts2.ServletActionContext;
+
+public class Pessoa extends ServletActionContext{ 
+	
+	private String nome;
+	private int idade;
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public int getIdade() {
+		return idade;
+	}
+	public void setIdade(int idade) {
+		this.idade = idade;
+	} 
+	
+	public String cadastrar(){
+		HttpServletRequest request = getRequest();
+		return "success";
+	}
+	
+}

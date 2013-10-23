@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+ "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+ "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+  
+ <package name="exemplo" namespace="/exemplo_" extends="struts-default">
+	<default-action-ref name="index" />
+ 	
+ 	<action name="index">
+		<result type="redirect">http://dieb.com.br</result>
+	</action>
+	
+	<action name="encadeamento">
+		<result type="chain">encadeamentos</result>
+	</action> 
+	<action name="encadeamentos">
+		<result type="redirect-admin">
+			<param name="actionName">login</param>
+		</result>
+	</action> 
+	
+  </package> 
+</struts>

@@ -1,0 +1,21 @@
+package dao;
+
+import java.util.List;
+
+import beans.Pessoa;
+
+public class PessoaDao {
+	
+	public Pessoa add(Pessoa p){
+		return null;
+	}
+	public Pessoa update(Pessoa p){
+		return null;
+	}
+	public List<Pessoa> list(){
+		return null;
+	}
+	public Pessoa delete(Pessoa p){
+		return null;
+	}
+}

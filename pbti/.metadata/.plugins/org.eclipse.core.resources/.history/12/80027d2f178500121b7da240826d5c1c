@@ -1,0 +1,9 @@
+package action;
+
+public class PessoaAction {
+	
+	private String nome;
+	private int idade;
+	
+
+}
