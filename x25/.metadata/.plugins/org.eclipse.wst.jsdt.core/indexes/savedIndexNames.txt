@@ -1,0 +1,8 @@
+INDEX VERSION 1.122+/Users/dieb/Sites/cursos/x25/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+2312044239.index
+3660948557.index
+4239474339.index
+4274638425.index
+2516946034.index
+2343964213.index
+1658170112.index

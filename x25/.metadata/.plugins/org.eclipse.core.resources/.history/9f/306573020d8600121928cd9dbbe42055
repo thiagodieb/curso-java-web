@@ -1,0 +1,93 @@
+package actions;
+
+import java.util.List;
+
+import beans.*;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+import dao.CategoriaDao;
+import dao.LivroDao;
+
+public class LivroAction extends ActionSupport{
+	private Livro livro;
+	private Categoria categoria;
+	private List<Categoria> listaCategoria = new CategoriaDao().list();
+	private List<Livro> listaLivro = new LivroDao().list();
+	private int id;
+	private String busca;
+	
+	
+	
+	public String getBusca() {
+		return busca;
+	}
+	public void setBusca(String busca) {
+		this.busca = busca;
+	}
+	public List<Livro> getListaLivro() {
+		return listaLivro;
+	}
+	public void setListaLivro(List<Livro> listaLivro) {
+		this.listaLivro = listaLivro;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public Livro getLivro() {
+		return livro;
+	}
+	public void setLivro(Livro livro) {
+		this.livro = livro;
+	}
+	public List<Categoria> getListaCategoria() {
+		return listaCategoria;
+	}
+	public void setListaCategoria(List<Categoria> listaCategoria) {
+		this.listaCategoria = listaCategoria;
+	}
+	
+	public Categoria getCategoria() {
+		return categoria;
+	}
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
+	}
+	public String execute(){
+		return SUCCESS;
+	}
+	public String add(){
+		if(getId() != 0){
+			setLivro(new LivroDao().getObjectById(getId()));
+		}
+		return SUCCESS;
+	}
+	public String save(){
+		
+		LivroDao lDao = new LivroDao();
+		System.out.println(getLivro());
+		setCategoria(new CategoriaDao().getObjectById(getCategoria().getId()));
+		getLivro().setCategoria(getCategoria());
+		lDao.update(getLivro());
+		
+		return SUCCESS;
+	}
+	public String list(){
+		
+		return SUCCESS;
+	}
+	public String search(){
+		setListaLivro(new LivroDao().find("%"+getBusca()+"%","titulo like :n"));
+		return SUCCESS;
+	}
+	public String delete(){
+		LivroDao lDao = new LivroDao();
+		Livro l =  new Livro();
+		l.setId(getId());
+		lDao.delete(l);
+		return SUCCESS;
+	}
+}

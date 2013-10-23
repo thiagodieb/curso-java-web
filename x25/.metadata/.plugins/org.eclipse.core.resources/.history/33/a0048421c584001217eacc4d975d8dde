@@ -1,0 +1,54 @@
+package dao;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+
+import beans.Livro;
+
+import connections.Conection;
+public class GenericDao<T>{
+	
+	public static EntityManager CONN = Conection.getConection();
+	public Class classe;
+	public T add(T objeto ){
+		CONN.getTransaction().begin();
+		CONN.persist(objeto);
+		CONN.getTransaction().commit();
+		return objeto;
+	}
+	
+	public T update(T objeto ){
+		CONN.getTransaction().begin();
+		CONN.merge(objeto);
+		CONN.getTransaction().commit();
+		return objeto;
+	}
+	
+	public T delete(T objeto ){
+		CONN.getTransaction().begin();
+		CONN.remove(objeto);
+		CONN.getTransaction().commit();
+		return objeto;
+	}
+	
+	public List<T> list(String classe){
+		String sql = "from "+classe;
+		CONN.getTransaction().begin();
+		List<T>  list = (List<T>) CONN.createQuery(sql).getResultList();
+		CONN.getTransaction().commit();
+		return list;
+	}
+	
+	public T getObjectById(int id){
+		return CONN.find(Livro.class, id);
+	}
+
+	@Override
+	public List<Livro> find(String valor) throws SQLException {
+		return (List<Livro>) CONN.createQuery("from Livro where titulo=:n")
+				.setParameter("n", valor).getResultList();
+		
+	}
+	
+}

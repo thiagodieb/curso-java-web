@@ -1,0 +1,61 @@
+package actions;
+
+import java.util.List;
+
+import beans.*;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+import dao.CategoriaDao;
+import dao.LivroDao;
+
+public class LivroAction extends ActionSupport{
+	private Livro livro;
+	private List<Categoria> listaCategoria = new CategoriaDao().list();
+	private int id;
+	
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public Livro getLivro() {
+		return livro;
+	}
+	public void setLivro(Livro livro) {
+		this.livro = livro;
+	}
+	public List<Categoria> getListaCategoria() {
+		return listaCategoria;
+	}
+	public void setListaCategoria(List<Categoria> listaCategoria) {
+		this.listaCategoria = listaCategoria;
+	}
+	
+	public String add(){
+		if(getId() != 0){
+			setLivro()
+		}
+		Livro livro = new Livro();
+		if(request.getParameter("id") != null){
+			int id = Integer.parseInt(request.getParameter("id"));
+			livro = new LivroDao().getObjectById(id);
+		}
+		
+		return SUCCESS;
+	}
+	public String save(){
+		return SUCCESS;
+	}
+	public String list(){
+		return SUCCESS;
+	}
+	public String search(){
+		return SUCCESS;
+	}
+	public String delete(){
+		return SUCCESS;
+	}
+}

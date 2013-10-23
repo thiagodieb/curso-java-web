@@ -1,0 +1,26 @@
+package actions;
+
+import beans.Curso;
+
+public class CursoAction {
+	
+	private Curso curso;
+	
+	public Curso getCurso() {
+		return curso;
+	}
+
+	public void setCurso(Curso curso) {
+		this.curso = curso;
+	}
+
+	public String add(){
+		System.out.println(this.getCurso());
+		return "ok";
+	}
+	
+	public String execute(){
+		return "success";
+	}
+
+}

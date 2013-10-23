@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<servers>
+  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/Tomcat v6.0 Server at localhost-config" deployDir="wtpwebapps" hostname="localhost" id="Tomcat v6.0 Server at localhost" name="Tomcat v6.0 Server at localhost" runtime-id="Apache Tomcat v6.0" server-type="org.eclipse.jst.server.tomcat.60" server-type-id="org.eclipse.jst.server.tomcat.60" start-timeout="45" stop-timeout="15" testEnvironment="true" timestamp="11">
+    <list key="modules" value0="Aula2::org.eclipse.jst.jee.server:Aula2::jst.web::2.5" value1="Aula3::org.eclipse.jst.jee.server:Aula3::jst.web::2.5" value10="Aula11::org.eclipse.jst.jee.server:Aula11::jst.web::2.5" value2="Aula4::org.eclipse.jst.jee.server:Aula4::jst.web::2.5" value3="Aula5::org.eclipse.jst.jee.server:Aula5::jst.web::2.5" value4="Aula6::org.eclipse.jst.jee.server:Aula6::jst.web::2.5" value5="Aula7::org.eclipse.jst.jee.server:Aula7::jst.web::2.5" value6="Aula8::org.eclipse.jst.jee.server:Aula8::jst.web::2.5" value7="Aula9::org.eclipse.jst.jee.server:Aula9::jst.web::2.5" value8="ProjetoLivro::org.eclipse.jst.jee.server:ProjetoLivro::jst.web::2.5" value9="Aula10::org.eclipse.jst.jee.server:Aula10::jst.web::2.5"/>
+  </server>
+</servers>

@@ -1,0 +1,15 @@
+package actions;
+
+public class CursoAction {
+	
+	
+
+	public String cadastrar(){
+		return "ok";
+	}
+	
+	public String execute(){
+		return "retorno_ok";
+	}
+
+}

@@ -1,0 +1,20 @@
+package actions;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class Index extends ActionSupport {
+	
+	private String msg = "nada";
+	public String getMsg() {
+		return msg;
+	}
+	public void setMsg(String msg) {
+		this.msg = msg;
+	}
+	public String principal(){
+		System.out.println("aaa");
+		this.setMsg("ssss");
+		return "success";
+	}
+
+}

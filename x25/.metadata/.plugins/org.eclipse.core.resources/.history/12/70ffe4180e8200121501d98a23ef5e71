@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>ProjetoLivro</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+   <servlet>
+    <description></description>
+    <display-name>Controladora</display-name>
+    <servlet-name>Controladora</servlet-name>
+    <servlet-class>actions.Controladora</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Controladora</servlet-name>
+    <url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+    <description></description>
+    <display-name>Cadastro</display-name>
+    <servlet-name>Cadastro</servlet-name>
+    <servlet-class>actions.Cadastro</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Cadastro</servlet-name>
+    <url-pattern>/Cadastro</url-pattern>
+  </servlet-mapping>
+    <servlet>
+    <description></description>
+    <display-name>Excluir</display-name>
+    <servlet-name>Excluir</servlet-name>
+    <servlet-class>actions.Excluir</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Excluir</servlet-name>
+    <url-pattern>/Excluir</url-pattern>
+  </servlet-mapping>
+</web-app>

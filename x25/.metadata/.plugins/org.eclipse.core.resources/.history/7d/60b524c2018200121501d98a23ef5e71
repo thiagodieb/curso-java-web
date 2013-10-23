@@ -1,0 +1,20 @@
+package db;
+
+import org.hibernate.cfg.AnnotationConfiguration;
+
+import sun.invoke.anon.AnonymousClassLoader;
+
+public class Conexao {
+
+	private static Session s;
+	
+	public static Session getSession(){
+		
+		if(s == null){
+			s = new AnnotationConfiguration().configure().buildSessionFactory().openSession();
+		}
+		return s;
+	}
+	
+	
+}
