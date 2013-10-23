@@ -1,8 +1,0 @@
-package dao;
- 
-
-public class CategoriaDao  extends GenericDao<Livro>{
-	
-	public Class classe = this.getClass();
-
-}

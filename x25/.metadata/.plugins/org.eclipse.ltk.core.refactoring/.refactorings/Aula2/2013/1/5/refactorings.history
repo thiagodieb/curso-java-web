@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="Move 1 resources to &apos;WebContent&apos;" description="Move 1 resources to &apos;WebContent&apos;" destination="WebContent" element1="WebContent/exercicio2/exercicio3" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="1" stamp="1359493859609" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;Aula2/WebContent/exercicio3/sistema.html&apos; to &apos;sistema2.html&apos;" description="Rename resource &apos;sistema.html&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="WebContent/exercicio3/sistema.html" name="sistema2.html" stamp="1359504042382" updateReferences="true"/>
-</session>

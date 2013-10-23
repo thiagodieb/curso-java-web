@@ -1,8 +1,0 @@
-package beans;
-
-public class Curso {
-	
-	private String nome;
-	private String empresa;
-
-}

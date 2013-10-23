@@ -1,7 +1,0 @@
-package dao;
-
-import beans.Livro;
-
-public class LivroDao extends GenericDao<Livro>{
-	public Class classe = Livro.class;
-}

@@ -1,8 +1,0 @@
-package action;
-
-public class AlunoAction {
-
-	public String execute(){
-		return "qualquercoisa";
-	}
-}

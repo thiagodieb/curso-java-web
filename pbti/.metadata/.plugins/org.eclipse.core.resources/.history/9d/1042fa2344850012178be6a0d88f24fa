@@ -1,5 +1,0 @@
-package interceptores;
-
-public class LoginInterceptor {
-
-}
