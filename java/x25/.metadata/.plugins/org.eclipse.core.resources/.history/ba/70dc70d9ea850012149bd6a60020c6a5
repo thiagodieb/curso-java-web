@@ -1,0 +1,17 @@
+package actions;
+
+public class CursoAction {
+	
+	private Pessoa p;
+
+	public String add(){
+		System.out.println(this.getNome());
+		System.out.println(this.getEmpresa());
+		return "ok";
+	}
+	
+	public String execute(){
+		return "success";
+	}
+
+}

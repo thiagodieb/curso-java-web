@@ -1,0 +1,50 @@
+package dao;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction; 
+
+import beans.Livro;
+
+import connections.Conection;
+import util.Connections;
+
+public class GenericDao<T>{
+	
+	public static EntityManager CONN = Conection.getConection();
+	protected Transaction t;
+	
+	public T add(T objeto ){
+		CONN.getTransaction().begin();
+		CONN.persist(T);
+		return T;
+	}
+	
+	public T update(T objeto ){
+		t = s.beginTransaction();
+		s.update(objeto);
+		t.commit();
+		s.close();
+		return objeto;
+	}
+	
+	public T delete(T objeto ){
+		t = s.beginTransaction();
+		s.delete(objeto);
+		t.commit();
+		s.close();
+		return objeto;
+	}
+	
+	public List<T> list(String classe){
+		String sql = "from "+classe;
+		t = s.beginTransaction();
+		List<T>  list = (List<T>) s.createQuery(sql).list();
+		t.commit();
+		return list;
+	}
+	
+}

@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping 
+ PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping package="beans">
+
+	<class name="Turma" table="turma">
+		<id name="id" column="idturma">
+			<generator class="increment" />
+		</id>
+		<property name="professor" />
+		<property name="horario" />
+		
+		<many-to-one name="curso" column="idcurso" class="Curso" cascade="save-update" />
+		
+		<set name="alunos" inverse="true" table="alunos_turmas" >
+			<key column="idturma"  />
+			<many-to-many column="idaluno" class="Aluno" />
+		</set>
+		
+	</class>
+
+</hibernate-mapping> 

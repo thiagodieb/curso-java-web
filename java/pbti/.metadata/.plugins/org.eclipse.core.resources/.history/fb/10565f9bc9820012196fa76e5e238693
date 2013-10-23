@@ -1,0 +1,29 @@
+package action;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.struts2.ServletActionContext;
+
+import beans.Aluno;
+
+import dao.AlunoDao;
+
+public class AlunoAction {
+
+	private HttpServletRequest r =  ServletActionContext.getRequest();
+	
+	public String list(){
+		r.setAttribute("lista", new AlunoDao().list());
+		return "success"; 
+	}
+	
+	public String add(){
+		Aluno aluno = new Aluno();
+		aluno.setNome(r.getParameter("nome"));
+		aluno.setIdade((Integer.parseInt(r.getParameter("idade")));
+		
+	}
+	public String execute(){
+		return "qualquercoisa";
+	}
+}

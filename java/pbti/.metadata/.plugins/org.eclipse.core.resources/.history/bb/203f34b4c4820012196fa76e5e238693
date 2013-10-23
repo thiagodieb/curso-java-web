@@ -1,0 +1,12 @@
+package beans;
+
+import javax.persistence.*;
+
+@Entity
+public class Aluno {
+	@Id
+	@GeneratedValue
+	private int id;
+	private String nome;
+	private String idade;
+}

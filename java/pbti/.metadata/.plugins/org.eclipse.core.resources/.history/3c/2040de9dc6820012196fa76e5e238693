@@ -1,0 +1,12 @@
+package dao;
+
+import java.util.List;
+
+import beans.Cursosss;
+
+public class CursoDao extends GenericDao<Cursosss>{
+	
+	public List<Cursosss> list(){
+		return super.list(Cursosss.class.getName());
+	}	
+}

@@ -1,0 +1,18 @@
+package util;
+
+import org.hibernate.Session;
+import org.hibernate.cfg.AnnotationConfiguration;
+
+public class Connections {
+	
+	private static Session s;
+	
+	public static Session getSession(){
+		
+		if(s == null){
+			s = new AnnotationConfiguration().buildSessionFactory().openSession();
+		}
+		return s;
+	}
+
+}

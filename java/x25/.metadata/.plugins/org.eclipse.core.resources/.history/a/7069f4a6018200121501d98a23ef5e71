@@ -1,0 +1,8 @@
+package db;
+
+public class Conexao {
+
+	private stratic Session s;
+	
+	
+}

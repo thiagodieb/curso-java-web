@@ -1,0 +1,10 @@
+package dao;
+
+import beans.Categoria;
+ 
+
+public class CategoriaDao  extends GenericDao<Categoria>{
+	public CategoriaDao() {
+		super().classe = Categoria.class;
+	}
+}

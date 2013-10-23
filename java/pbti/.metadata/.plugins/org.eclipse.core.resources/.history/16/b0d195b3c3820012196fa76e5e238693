@@ -1,0 +1,10 @@
+package action;
+
+public class CursoAction {
+	
+	
+	public String execute(){
+		return "success";
+	}
+
+}

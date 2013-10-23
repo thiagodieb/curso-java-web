@@ -1,0 +1,70 @@
+package dao;
+
+import java.sql.*;
+import java.util.*;
+
+import beans.*;
+
+public class CategoriaDao implements GeralDao<Categoria>{
+	
+ 	@Override
+	public void add(Categoria e) throws SQLException {
+		CONN.getTransaction().begin();
+		CONN.persist(e);
+		CONN.getTransaction().commit();
+ 		
+	}
+
+	@Override
+	public void delete(int id)  throws SQLException {
+		CONN.getTransaction().begin();
+		CONN.remove(new Categoria(id, null));
+		CONN.getTransaction().commit();
+		
+	}
+
+	@Override
+	public Categoria update(Categoria e)  throws SQLException {
+		CONN.getTransaction().begin();
+		Categoria c = (Categoria) CONN.merge(e);
+		CONN.getTransaction().commit();
+		return c;
+	}
+
+	@Override
+	public List<Categoria> list() throws SQLException {
+		String sql2 = "Select * from categoria";
+		Statement stm = CONN.createStatement();
+		PreparedStatement ps2 = CONN.prepareStatement(sql2);
+		ResultSet rs = ps2.executeQuery();
+		ArrayList<Categoria> categorias = new ArrayList<Categoria>();
+		while(rs.next()){
+			categorias.add(new Categoria(
+					rs.getInt("idCategoria"),
+					rs.getString("nome")));
+		}
+		return categorias;
+	}
+
+	@Override
+	public Categoria getObjectById(int id) throws SQLException {
+		String sql2 = "Select * from categoria where idCategoria=?";
+		PreparedStatement ps2 = CONN.prepareStatement(sql2);
+		ps2.setInt(1, id);
+		ResultSet rs2 = ps2.executeQuery();
+		while(rs2.next()){
+			return new Categoria(
+					rs2.getInt("idCategoria"),
+					rs2.getString("nome"));
+		}
+		return null;
+	}
+
+	@Override
+	public List<Categoria> find(String valor) throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+}

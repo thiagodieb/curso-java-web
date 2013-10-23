@@ -1,0 +1,49 @@
+package action;
+
+
+import java.util.List;
+
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.struts2.ServletActionContext;
+
+import dao.PessoaDao;
+
+import beans.Pessoa;
+
+public class PessoaAction {
+	private Pessoa pessoa;
+	private List<Pessoa> pessoaList;
+	private PessoaDao pessoaDao;
+	
+
+	public PessoaAction(){
+		pessoaDao = new PessoaDao(); 
+	}
+	
+	public String execute(){
+		return "success";
+	}
+	
+	public String add(){
+		
+		pessoaDao.add(pessoa);
+		return "success";
+	}
+	
+	
+	
+	public Pessoa getPessoa() {
+		return pessoa;
+	}
+	public void setPessoa(Pessoa pessoa) {
+		this.pessoa = pessoa;
+	}
+	public List<Pessoa> getPessoaList() {
+		return pessoaList;
+	}
+	public void setPessoaList(List<Pessoa> pessoaList) {
+		this.pessoaList = pessoaList;
+	}
+}

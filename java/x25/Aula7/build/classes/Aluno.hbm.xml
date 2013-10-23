@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping 
+ PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping package="beans">
+
+	<class name="Aluno" table="aluno">
+		<id name="id" column="idaluno">
+			<generator class="increment" />
+		</id>
+		<property name="nome" />
+		<property name="idade" />
+		
+		<set name="turmas" table="alunos_turmas">
+			<key column="idaluno" />
+			<many-to-many column="idturma" class="Turma"/>
+		</set>
+		
+ 	</class>
+
+</hibernate-mapping> 

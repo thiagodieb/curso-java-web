@@ -1,0 +1,15 @@
+package dao;
+
+import org.hibernate.Session;
+
+import db.Conexao;
+
+public class UsuarioDao {
+	
+	private Session s = Conexao.getSession();
+	
+	public void add(Usuario a){
+		
+	}
+
+}

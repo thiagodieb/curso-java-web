@@ -1,0 +1,17 @@
+package actions;
+
+public class CursoAction {
+	
+	private String nome;
+	private String empresa;
+	
+
+	public String add(){
+		return "ok";
+	}
+	
+	public String execute(){
+		return "retorno_ok";
+	}
+
+}

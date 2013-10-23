@@ -1,0 +1,57 @@
+package dao;
+
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import beans.Categoria;
+import beans.Livro;
+
+public class LivroDao implements GeralDao<Livro>{
+
+ 	@Override
+	public void add(Categoria e) throws SQLException {
+		CONN.getTransaction().begin();
+		CONN.persist(e);
+		CONN.getTransaction().commit();
+ 		
+	}
+
+	@Override
+	public void delete(int id)  throws SQLException {
+		CONN.getTransaction().begin();
+		CONN.remove(new Categoria(id, null));
+		CONN.getTransaction().commit();
+		
+	}
+
+	@Override
+	public Categoria update(Categoria e)  throws SQLException {
+		CONN.getTransaction().begin();
+		Categoria c = (Categoria) CONN.merge(e);
+		CONN.getTransaction().commit();
+		return c;
+	}
+
+	@Override
+	public List<Categoria> list() throws SQLException {
+		return (List<Categoria>) CONN.createQuery("from Categoria").getResultList();
+	}
+
+	@Override
+	public Categoria getObjectById(int id) throws SQLException {
+		return CONN.find(Categoria.class, id);
+	}
+
+	@Override
+	public List<Categoria> find(String valor) throws SQLException {
+		return (List<Categoria>) CONN.createQuery("from Categoria where nome=:n")
+				.setParameter("n", valor).getResultList();
+		
+	}
+
+
+}

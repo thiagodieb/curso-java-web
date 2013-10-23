@@ -1,0 +1,21 @@
+package actions;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class LivroAction extends ActionSupport{
+	public String add(){
+		return SUCCESS;
+	}
+	public String save(){
+		return SUCCESS;
+	}
+	public String list(){
+		return SUCCESS;
+	}
+	public String search(){
+		return SUCCESS;
+	}
+	public String delete(){
+		return SUCCESS;
+	}
+}

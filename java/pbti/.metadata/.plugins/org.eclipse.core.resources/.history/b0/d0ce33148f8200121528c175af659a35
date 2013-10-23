@@ -1,0 +1,20 @@
+<%@ taglib uri="/struts-tags" prefix="s" %>
+
+<%@ page language="java" contentType="text/html; charset=US-ASCII"
+    pageEncoding="US-ASCII"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<title>Cadastro de Pessoa</title>
+</head>
+<body>
+<s:form method="post" action="saveDetails.action"v
+<s:textfield label="Name" name="name"/>
+<s:password label="Password" name="password"/>
+<s:radio list="{'Male','Female'}" label="Gender" name="gender"></s:radio>
+<s:select list="{'Gurgaon','Moradabad','Delhi','Noida'}" name="city" label="City"></s:select>
+<s:submit label="Save"></s:submit>
+</s:form>
+</body>
+</html>

@@ -1,0 +1,13 @@
+package db;
+
+public class Conexao {
+
+	private static Session s;
+	
+	public static Session getSession(){
+		
+		
+	}
+	
+	
+}

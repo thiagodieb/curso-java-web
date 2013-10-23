@@ -1,0 +1,27 @@
+package dao;
+
+import java.util.List;
+
+import beans.Categoria;
+import beans.Livro;
+
+public class LivroDao extends GenericDao<Livro>{
+
+ 	@O 
+	public List<Livro> list() throws SQLException {
+		return (List<Livro>) CONN.createQuery("from Livro").getResultList();
+	}
+
+	public Livro getObjectById(int id){
+		return CONN.find(Livro.class, id);
+	}
+
+	@Override
+	public List<Livro> find(String valor) throws SQLException {
+		return (List<Livro>) CONN.createQuery("from Livro where titulo=:n")
+				.setParameter("n", valor).getResultList();
+		
+	}
+
+
+}

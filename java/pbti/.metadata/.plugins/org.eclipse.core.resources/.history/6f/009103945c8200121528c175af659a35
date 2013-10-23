@@ -1,0 +1,12 @@
+package action;
+
+public class Index {
+	
+	public String list(){
+		return "list";
+	}
+
+	public String initial(){
+		return "initial";
+	}
+}
